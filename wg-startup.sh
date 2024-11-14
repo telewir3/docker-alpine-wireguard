@@ -7,18 +7,18 @@ then
     echo "[Interface]" > wg0.conf
     echo -n "PrivateKey = " >> wg0.conf
     cat privatekey >> wg0.conf
-    echo -n "#PublicKey = " >> wg0.conf
+    echo -n "PublicKey = " >> wg0.conf
     cat privatekey | wg pubkey >> wg0.conf
-    echo "#Address = 10.1.1.1/32" >> wg0.conf
-    echo "#DNS = 1.1.1.1,8.8.8.8
+    echo "Address = 10.1.1.1/32" >> wg0.conf
+    echo "DNS = 1.1.1.1,8.8.8.8
 ListenPort = 51820
 SaveConfig = true
 
 [Peer] 
-#PublicKey = GtL7fZc/bLnqZldpVofMCD6hDjrK28SsdLxevJ+qtKU= 
-#PresharedKey = /UwcSPg38hW/D9Y3tcS1FOV0K1wuURMbS0sesJEP5ak= 
-#AllowedIPs = 0.0.0.0/0 
-#Endpoint = demo.wireguard.com:51820" >> wg0.conf
+PublicKey = GtL7fZc/bLnqZldpVofMCD6hDjrK28SsdLxevJ+qtKU= 
+PresharedKey = /UwcSPg38hW/D9Y3tcS1FOV0K1wuURMbS0sesJEP5ak= 
+AllowedIPs = 0.0.0.0/0 
+Endpoint = youthful-betsy-juanmontenegro-7292d63c.koyeb.app:51820" >> wg0.conf
     chmod 700 wg0.conf
 fi
 
